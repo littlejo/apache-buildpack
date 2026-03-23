@@ -46,6 +46,9 @@ if [ -f "${BUILD_DIR}/.apache-mods" ]; then
     install_mod="$( ls "${BUILD_DIR}/.apt/usr/lib/apache2/modules/" \
                     | { grep --count "${apache_mod_filename}" || true; } )"
 
+    echo "Checking module: ${apache_mod} -> ${apache_mod_filename}"
+    echo "Found count: ${install_mod}"
+
     # If the module isn't shipped by default, let's install it:
     if [ ${install_mod} -eq 0 ]; then
       echo "libapache2-mod-${apache_mod}" >> "${BUILD_DIR}/${APT_FILE_MANIFEST}"
