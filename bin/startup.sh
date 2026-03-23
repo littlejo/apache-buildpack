@@ -98,6 +98,8 @@ if [ -f "${HOME}/apache.conf.erb" ] ; then
   echo "Include ${HOME}/vendor/apache2/conf/site.conf" >> "${HOME}/vendor/apache2/conf/httpd.conf"
 fi
 
+ls ${HOME}/.apt/usr/lib/apache2/modules/
+
 # Starting
 echo "Starting Apache..."
 exec "${HOME}/.apt/usr/sbin/apache2" -f "${HOME}/vendor/apache2/conf/httpd.conf" -DFOREGROUND
