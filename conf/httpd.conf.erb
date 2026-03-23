@@ -15,6 +15,7 @@ LoadModule access_compat_module <%= ENV["HOME"] %>/.apt/usr/lib/apache2/modules/
 LoadModule dir_module <%= ENV["HOME"] %>/.apt/usr/lib/apache2/modules/mod_dir.so
 LoadModule authn_core_module <%= ENV["HOME"] %>/.apt/usr/lib/apache2/modules/mod_authn_core.so
 LoadModule authz_core_module <%= ENV["HOME"] %>/.apt/usr/lib/apache2/modules/mod_authz_core.so
+LoadModule headers_module <%= ENV["HOME"] %>/.apt/usr/lib/apache2/modules/mod_headers.so
 
 <% if File.exist?(ENV["HOME"] + "/.apache-mods") %>
   <% File.read(ENV["HOME"] + "/.apache-mods").each_line do |mod| %>
