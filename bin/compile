@@ -61,6 +61,10 @@ if [ -f "${BUILD_DIR}/.apache-mods" ]; then
   fi
 fi
 
+
+cat ${BUILD_DIR}/.apache-mods
+cat ${BUILD_DIR}/${APT_FILE_MANIFEST}
+
 rm -rf "${apt_deps_buildpack_dir}"
 
 mkdir -p "${APACHE_DIR}/logs"
